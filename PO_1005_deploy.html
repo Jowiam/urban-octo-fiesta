@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="9, 15, 18">
+
+<title>PO_1005</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="PO_1005_deploy_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PO_1005_deploy_files/libs/quarto-html/quarto.js"></script>
+<script src="PO_1005_deploy_files/libs/quarto-html/popper.min.js"></script>
+<script src="PO_1005_deploy_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PO_1005_deploy_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PO_1005_deploy_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PO_1005_deploy_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PO_1005_deploy_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PO_1005_deploy_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PO_1005_deploy_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="PO_1005_deploy_files/libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="PO_1005_deploy_files/libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="PO_1005_deploy_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="PO_1005_deploy_files/libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="PO_1005_deploy_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="PO_1005_deploy_files/libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="PO_1005_deploy_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="PO_1005_deploy_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="PO_1005_deploy_files/libs/leaflet-binding-2.1.2/leaflet.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PO_1005</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>9, 15, 18 </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_final <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/Magnusjahren/Datapo/main/Data_po_1005_2.csv"</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#df_final$DATE &lt;- as.Date(df_final$DATE)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#mutate data to get lat and long in the right format for leaflet</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#mutate date variable to date format</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df_final <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lat =</span> lat<span class="sc">/</span><span class="dv">10000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">long =</span> long<span class="sc">/-</span><span class="dv">10000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DATE =</span> <span class="fu">as.Date</span>(DATE))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df_opg3 <span class="ot">&lt;-</span> df_final</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="oppgave-2" class="level1">
+<h1>oppgave 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_final <span class="sc">%&gt;%</span> <span class="co">#filtering for store 12</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(STORE <span class="sc">==</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span> <span class="co">#grouping by brand</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(BRAND) <span class="sc">%&gt;%</span>  <span class="co">#summarising sales</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> DATE, <span class="at">y =</span> Sum_Sales, <span class="at">fill =</span> BRAND)) <span class="sc">+</span> <span class="co">#plotting</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Weekly sales of beer in Chicago by brand"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"1992"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Sales in USD"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Brand"</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PO_1005_deploy_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_final1 <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> <span class="co">#making a new dataframe to plot the pie chart</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(STORE <span class="sc">==</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(BRAND) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">Sum_Sales =</span> <span class="fu">sum</span>(Sum_Sales))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>pie1 <span class="ot">&lt;-</span><span class="fu">ggplot</span>(df_final,<span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>Sum_Sales, <span class="at">fill=</span>BRAND)) <span class="sc">+</span> <span class="co">#plotting the pie chart</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start=</span><span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Markedshare beer brands in %"</span>, <span class="at">fill =</span> <span class="st">"Brand"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_final2 <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> <span class="co">#making a new dataframe to plot the pie chart</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(STORE <span class="sc">==</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span> <span class="co">#filtering for store 12</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">unemployed =</span> unemp) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">education =</span> educ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">workingwoman =</span> workwom) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(single, retired, unemployed, education, poverty, workingwoman) <span class="sc">%&gt;%</span> <span class="co">#selecting the variables we want to plot</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"single"</span>, <span class="st">"retired"</span>, <span class="st">"unemployed"</span>, <span class="st">"education"</span>, <span class="st">"poverty"</span>, <span class="st">"workingwoman"</span>), <span class="at">names_to =</span> <span class="st">"name"</span>, <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="co">#making the data long</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>pie2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_final2,<span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>val, <span class="at">fill=</span>name)) <span class="sc">+</span> <span class="co">#plotting the pie chart</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span> <span class="co">#making the pie chart</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>, <span class="at">start=</span><span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span> <span class="co">#removing the background</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Customer share of beer sales in Chicago"</span>, <span class="at">fill =</span> <span class="st">"Group"</span>) <span class="co">#adding title and legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting the two pie charts side by side</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(pie1,pie2, <span class="at">ncol=</span><span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PO_1005_deploy_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Long run time, optional run  pie1, pie2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Salgsresultater: Oversikt over totalt salgsvolum, inntekt og enheter solgt.</p>
+<p>Salgstrender: Analyse av salgstrender over tid og sesongmessige mønstre.</p>
+<p>Produktytelse: Vurdering av mest solgte produkter, produkter med høy margin.</p>
+<p>Markedsandel: Evaluering av markedsandelen i forhold til konkurrenter og bransjen.</p>
+<p>Anbefalinger: Tiltak eller strategier for å forbedre salgsresultatene.</p>
+</section>
+<section id="oppgave-3" class="level1">
+<h1>Oppgave 3</h1>
+<p>Samlet salgsytelse: Oversikt over konsernets totale salgsytelse per måned.</p>
+<p>Markedsandel: Evaluering av konsernets markedsandel i forhold til konkurrenter og bransjen.</p>
+<p>Produktkategorier: Gjennomgang av salgsytelse for ulike produktkategorier eller segmenter.</p>
+<p>Salgstrender: Analyse av salgstrender over tid og sesongmessige mønstre.</p>
+<p>Konkurrentanalyse: Evaluering av konkurrentenes ytelse og markedsposisjon.</p>
+<p>Økonomiske resultater: Oversikt over økonomiske resultater og relevante indikatorer.</p>
+<p>Anbefalinger og handlingsplaner: Forslag til tiltak for å forbedre konsernets salgsresultater.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_opg3 <span class="ot">&lt;-</span> df_opg3 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">profit =</span> (Sum_Sales<span class="sc">*</span>PROFIT)<span class="sc">/</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(DATE,<span class="at">label =</span> <span class="cn">TRUE</span>))<span class="co">#making a profit variable with actual $value</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df_opg3 <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>month, <span class="at">y=</span>Sum_Sales, <span class="at">fill=</span>BRAND)) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Beer sales in Chicago"</span>, <span class="at">x =</span> <span class="st">"Monthly(1992)"</span>, <span class="at">y =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PO_1005_deploy_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> df_opg3 <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">sum</span>(profit), <span class="fu">sum</span>(Sum_Sales)) <span class="co">#Make a dataframe with the monthly sum of sales and profit</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">&lt;-</span> df_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">sales =</span> <span class="st">`</span><span class="at">sum(Sum_Sales)</span><span class="st">`</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">profit =</span> <span class="st">`</span><span class="at">sum(profit)</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="co">#Rename to easier names</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"profit"</span>, <span class="st">"sales"</span>), <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="co">#Transform the dataframe into a long format </span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>df_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> values, <span class="at">fill =</span> variable)) <span class="sc">+</span> </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">stat=</span> <span class="st">"identity"</span>) <span class="sc">+</span> <span class="co">#Make a bar plot and using dodge to get a bar for each variable</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Monthly profit and Sales in all stores"</span>, <span class="at">x =</span> <span class="st">"Month"</span>, <span class="at">y =</span> <span class="st">"USD in thousand"</span>, <span class="at">fill =</span> <span class="st">"Variable"</span>) <span class="co">#Adding labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="PO_1005_deploy_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="oppgave-4" class="level1">
+<h1>Oppgave 4</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_test <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span> <span class="co">#making a new dataframe to plot the pie chart</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(STORE) <span class="sc">%&gt;%</span>  <span class="co">#grouping by store</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sales =</span> <span class="fu">sum</span>(Sum_Sales)) <span class="co">#summarising sales</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df_map <span class="ot">&lt;-</span> df_final <span class="sc">%&gt;%</span>  <span class="co">#making a new dataframe to plot the leaflet map</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(city, lat, long, name, Sum_Sales, STORE) <span class="sc">%&gt;%</span> <span class="co">#selecting the variables we want to plot</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(STORE, lat, long, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>map <span class="ot">&lt;-</span> <span class="fu">merge</span>(df_map, df_test) <span class="sc">%&gt;%</span> <span class="co">#merging the two dataframes</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">colorNumeric</span>(<span class="fu">c</span>(<span class="at">palette =</span> <span class="st">"red"</span>,<span class="st">"green"</span>), <span class="at">domain =</span> map<span class="sc">$</span>sales) <span class="co">#making a color palette</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plotting the leaflet map </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>map <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> <span class="co">#adding the map</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> <span class="co">#adding the tiles</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span> long, <span class="sc">~</span> lat,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="sc">~</span> <span class="fu">paste</span>(city, <span class="st">"total income: $"</span>, sales),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">radius =</span> <span class="sc">~</span> sales<span class="sc">/</span><span class="dv">4000</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="sc">~</span> <span class="fu">pal</span>(sales),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">stroke =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">weight =</span> <span class="dv">1</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">opacity =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="co">#adding the circle markers, with the size of the circle based on sales, and the color based on the color palette.</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="at">pal =</span> pal, <span class="at">values =</span> map<span class="sc">$</span>sales, <span class="at">title =</span> <span class="st">"Total Sales ($)"</span>, <span class="at">position =</span> <span class="st">"bottomright"</span> ) <span class="co">#adding the legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-29bc185ee5122bfadb3a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-29bc185ee5122bfadb3a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[42.1203,41.7331,42.0411,41.9928,42.0733,41.9364,42.0058,41.9872,41.9386,41.7317,41.8111,41.7169,41.6594,42.0039,41.7683,42.2275,42.1006,41.9075,41.8586,41.9758,41.5228,41.8456,42.0139,41.765,41.9553,41.9764,41.9394,42.2413,41.7536,42.1088,42.0461,41.6164,41.9419,41.8075,41.6814,41.7067,41.9589,41.9447,41.7653,41.7953,41.8356,42.0247,41.6836,41.6917,41.8967,41.7205,41.8336,42.1992,42.0942,41.7511,42.1528,41.9964,41.75,41.8906,42.0164,42.0403,42.1383,41.7728,42.0453,41.9683,41.83,42.0056,42.1908,41.7652,42.0761,41.5052,41.9161],[-88.0431,-87.7436,-87.7994,-87.6592,-87.7994,-87.8331,-88.1411,-87.8378,-87.6447,-87.7969,-87.9869,-87.8347,-87.7775,-87.7069,-87.8881,-88.3136,-87.7708,-87.9844,-87.9736,-87.6917,-88.1308,-87.8058,-87.7469,-87.7253,-87.8086,-87.6542,-87.7114,-87.9561,-88.0119,-87.9791,-87.9416,-87.8511,-87.6886,-87.7047,-87.5394,-87.7392,-88.0892,-87.7589,-88.3625,-87.7606,-87.6664,-87.8931,-87.7011,-88.0689,-87.8836,-88.3188,-87.8997,-87.8603,-88.2586,-87.6281,-87.9836,-87.7878,-88.1136,-87.9597,-88.0817,-87.7706,-87.9572,-87.9481,-88.1431,-87.7283,-88.1036,-87.6808,-88.1091,-87.5755,-88.015,-87.7169,-88.2077],[0.7085475,4.856035,5.7030425,14.3800275,8.458215,3.9200375,7.5246875,9.83752,10.2898125,3.4487425,2.9576275,1.263665,3.4859125,3.429335,3.656915,6.9249325,10.52583,7.568975,7.2027475,6.9991825,9.04321,8.2388375,5.552815,6.57417,5.3352675,13.683235,10.78207,9.87754,6.189375,4.4787,5.4878775,6.1705275,15.1198125,6.6659125,3.923525,4.31282,8.584755,6.203545,7.272675,15.5205525,23.37987,19.4215575,16.972055,23.6859,17.720905,4.7974875,8.1279325,14.2912725,8.3436,2.0356225,20.255225,7.3716025,14.195785,9.0615825,5.5609875,3.3621025,5.9035625,17.40091,19.192995,10.5510225,19.5445825,20.25221,14.3903725,4.1375325,14.2809125,12.6067925,19.911505],null,null,{"interactive":true,"className":"","stroke":true,"color":["#FF0000","#EF6400","#EC6E00","#B9BC00","#DE8B00","#F35800","#E38200","#D79700","#D49B00","#F55100","#F74900","#FD2200","#F55200","#F55100","#F45400","#E67B00","#D39D00","#E38200","#E57E00","#E67C00","#DB9000","#E08800","#EC6D00","#E87800","#ED6A00","#BEB700","#D19F00","#D79700","#E97400","#F15F00","#ED6C00","#EA7300","#B3C200","#E77900","#F35800","#F25D00","#DE8C00","#E97400","#E47F00","#AFC500","#24FD00","#86E100","#A2D000","#00FF00","#9AD500","#F06300","#E08700","#BABC00","#DF8900","#FA3700","#79E700","#E48000","#BABB00","#DB9000","#EC6D00","#F55000","#EB7100","#9ED300","#89E000","#D39D00","#84E200","#79E700","#B9BC00","#F25B00","#BABC00","#C6AE00","#7FE500"],"weight":1,"opacity":1,"fill":true,"fillColor":["#FF0000","#EF6400","#EC6E00","#B9BC00","#DE8B00","#F35800","#E38200","#D79700","#D49B00","#F55100","#F74900","#FD2200","#F55200","#F55100","#F45400","#E67B00","#D39D00","#E38200","#E57E00","#E67C00","#DB9000","#E08800","#EC6D00","#E87800","#ED6A00","#BEB700","#D19F00","#D79700","#E97400","#F15F00","#ED6C00","#EA7300","#B3C200","#E77900","#F35800","#F25D00","#DE8C00","#E97400","#E47F00","#AFC500","#24FD00","#86E100","#A2D000","#00FF00","#9AD500","#F06300","#E08700","#BABC00","#DF8900","#FA3700","#79E700","#E48000","#BABB00","#DB9000","#EC6D00","#F55000","#EB7100","#9ED300","#89E000","#D39D00","#84E200","#79E700","#B9BC00","#F25B00","#BABC00","#C6AE00","#7FE500"],"fillOpacity":0.5},null,null,null,null,["PALATINE total income: $ 2834.19","OAK LAWN total income: $ 19424.14","MORTON GROVE total income: $ 22812.17","CHICAGO total income: $ 57520.11","GLENVIEW total income: $ 33832.86","RIVER GROVE total income: $ 15680.15","HANOVER PARK total income: $ 30098.75","PARK RIDGE total income: $ 39350.08","CHICAGO total income: $ 41159.25","BRIDGEVIEW total income: $ 13794.97","DOWNERS GROVE total income: $ 11830.51","HICKORY HILLS total income: $ 5054.66","PALOS HEIGHTS total income: $ 13943.65","CHICAGO total income: $ 13717.34","COUNTRYSIDE total income: $ 14627.66","CRYSTAL LAKE total income: $ 27699.73","NORTHFIELD total income: $ 42103.32","VILLA PARK total income: $ 30275.9","OAKBROOK TERRACE total income: $ 28810.99","CHICAGO total income: $ 27996.73","JOLIET total income: $ 36172.84","NORTH RIVERSIDE total income: $ 32955.35","LINCOLNWOOD total income: $ 22211.26","CHICAGO total income: $ 26296.68","NORRIDGE total income: $ 21341.07","CHICAGO total income: $ 54732.94","CHICAGO total income: $ 43128.28","VERNON HILLS total income: $ 39510.16","DOWNERS GROVE total income: $ 24757.5","ARLINGTON HEIGHTS total income: $ 17914.8","MOUNT PROSPECT total income: $ 21951.51","ORLAND PARK total income: $ 24682.11","CHICAGO total income: $ 60479.25","CHICAGO total income: $ 26663.65","CHICAGO total income: $ 15694.1","OAK LAWN total income: $ 17251.28","BLOOMINGDALE total income: $ 34339.02","CHICAGO total income: $ 24814.18","AURORA total income: $ 29090.7","CHICAGO total income: $ 62082.21","CHICAGO total income: $ 93519.48","DES PLAINES total income: $ 77686.23","MERRIONETTE PARK total income: $ 67888.22","BOLINGBROOK total income: $ 94743.6","MELROSE PARK total income: $ 70883.62","MONTGOMERY total income: $ 19189.95","WESTCHESTER total income: $ 32511.73","BANNOCKBURN total income: $ 57165.09","EAST DUNDEE total income: $ 33374.4","CHICAGO total income: $ 8142.49","BUFFALO GROVE total income: $ 81020.9","CHICAGO total income: $ 29486.41","NAPERVILLE total income: $ 56783.14","ELMHURST total income: $ 36246.33","SCHAUMBURG total income: $ 22243.95","MORTON GROVE total income: $ 13448.41","BUFFALO GROVE total income: $ 23614.25","WILLOWBROOK total income: $ 69603.64","HOFFMAN ESTATES total income: $ 76771.98","CHICAGO total income: $ 42204.09","WHEATON total income: $ 78178.33","CHICAGO total income: $ 81008.84","LAKE ZURICH total income: $ 57561.49","CHICAGO total income: $ 16550.13","ROLLING MEADOWS total income: $ 57123.65","MATTESON total income: $ 50427.17","WEST CHICAGO total income: $ 79646.02"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#FF0000 , #F94100 7.79660102268092%, #EF6600 18.6768797667181%, #E38100 29.5571585107553%, #D69800 40.4374372547925%, #C7AD00 51.3177159988297%, #B4C100 62.1979947428669%, #9DD400 73.0782734869041%, #7DE500 83.9585522309413%, #4AF700 94.8388309749785%, #00FF00 "],"labels":["10,000","20,000","30,000","40,000","50,000","60,000","70,000","80,000","90,000"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"numeric","title":"Total Sales ($)","extra":{"p_1":0.0779660102268092,"p_n":0.948388309749785},"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[41.5052,42.2413],"lng":[-88.3625,-87.5394]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p><strong>Kan dataene benyttes til å planlegge nye utsalg? Dersom konsernledelsen ønsker å etablere et nytt utsalg, hvordan kan de benytte dataene til å finne den beste lokasjonen?</strong></p>
+<p>Butikkdata kan brukes til å kvantifisere den geografiske påvirkningen av hver butikk på markedet. En effektiv tilnærming er å tildele hver butikk en egen sirkel som er plassert geografisk korrekt og representerer butikkens årlige inntekt. Sirkelen antyder hvor mye av området rundt butikken som genererer inntekt. Ved å opprette et slikt kart kan vi identifisere områder der butikkjeden ikke genererer inntekter og anta at det kan være et potensielt inntektsgrunnlag i disse områdene.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
